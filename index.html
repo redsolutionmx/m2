@@ -29,6 +29,7 @@
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
 	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="awesome/css/font-awesome.css">
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<!-- Flexslider  -->
@@ -144,11 +145,12 @@
             <div class="filter">
         <form action="" method="post" enctype="multipart/form-data" >
             <div class="search">
-                Encuentra tu hogar en M2
+                Encuentra tu hogar ideal en M2
+                <br />
                 <br />
                 <div class="forms">
-                    <label>Deseas:</label><br />
-                    <select name="operacion" required>
+                    <label>Deseas</label><br />
+                    <select class="input" name="operacion" required>
                         <option value="">Seleccionar una opción</option>
                         <option value="Renta">Rentar</option>
                         <option value="Comprar">Comprar</option>
@@ -156,11 +158,11 @@
                 </div>
                 <div class="forms">
                     <label>¿En donde lo necesitas?</label><br />
-                    <input name="lugar" value="" placeholder="Calle, Delegación o C.P." >
+                    <input class="input" name="lugar" value="" placeholder="Calle, Delegación o C.P." >
                 </div>
                 <div class="forms">
-                    <label>Habitaciones</label><br />
-                    <select name="lugar" >
+                    <label>Num. de habitaciones</label><br />
+                    <select class="input text" name="lugar" >
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="2">3</option>
@@ -169,7 +171,7 @@
                 </div>
                 <div class="forms">
                     <label>Baños</label><br />
-                    <select name="lugar" >
+                    <select class="input text" name="lugar" >
                         <option value="1/2">1/2</option>
                         <option value="1">1</option>
                         <option value="1 1/2">1 1/2</option>
@@ -178,9 +180,20 @@
                     </select>
                 </div>
                 <div class="forms">
-                    <label>Amueblado</label><br />
-                     <input type="radio" name="gender" value="si"> si
-  <input type="radio" name="gender" value="no"> no<br>
+                    <label>¿Lo deseas amueblado?</label>
+                    <br />
+                     <div class="radios"><input type="radio" name="gender" value="si"> si </div>
+                     <div class="radios"><input type="radio" name="gender" value="no"> no</div>
+                </div>
+                <div class="forms">
+                    <label>Precio Min/Max</label>
+                    <br />
+                     <div class="precios fontmin">
+                         <i class="fa fa-usd" aria-hidden="true"></i>
+                         <input  style="width:100px;" type="number" name="min" value="" placeholder="$ Min" > </div><i class="fa fa-minus" aria-hidden="true"></i>
+                     <div class="precios fontmin">
+                         <i class="fa fa-usd" aria-hidden="true"></i>
+                         <input style="width:100px;" type="number" name="max" value="" placeholder="$ Max" ></div>
                 </div>
             </div>
         </form>
