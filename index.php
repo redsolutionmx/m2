@@ -152,24 +152,25 @@ include 'Process/database.php';
                 <br />
                 <div class="forms">
                     <label>Deseas</label><br />
-                    <select class="input" id="operacion1" name="operacion" required>
+                    <select class="input" name="operacion" required>
                         <option value="">Seleccionar una opción</option>
-                        <?php echo $result_tipo['operacion']; ?>
-                        <option value="rentar">Rentar</option>
-                        <option value="comprar">Comprar</option>
+                        <?php do{
+    echo '<option value="'.$result_tipo['id_operacion'].'" >'.$result_tipo['operacion'].'</option> ';
+}while($result_tipo = mysql_fetch_assoc($query_tipo)); ?>
+
                     </select>
                 </div>
                 <div class="forms">
                     <label>¿Buscas  <b><label id="operacion"></label></b> un(a)?</label><br />
                     <select class="input" name="operacion" required>
-                        <option value="">Seleccionar una opción</option>
-                        <option value="Casa">Casa</option>
-                        <option value="Departamento">Departamento</option>
-                        <option value="Bodega">Bodega</option>
-                        <option value="Almacen">Almacen</option>
-                        <option value="Terreno">Terreno</option>
-                        <option value="Edifico">Edificio</option>
-                        <option value="Local">Local Comercial</option>
+                        <option class="blue" value="">Seleccionar una opción</option>
+                        <option  class="blue" value="Casa">Casa</option>
+                        <option class="blue" value="Departamento">Departamento</option>
+                        <option class="blue" value="Bodega">Bodega</option>
+                        <option class="blue" value="Almacen">Almacen</option>
+                        <option class="blue" value="Terreno">Terreno</option>
+                        <option class="blue" value="Edifico">Edificio</option>
+                        <option class="blue" value="Local">Local Comercial</option>
                     </select>
                 </div>
                 <div class="forms">
@@ -518,13 +519,6 @@ include 'Process/database.php';
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
         <!--efectos form-->
-        <script type="text/javascript">
-           $(document).ready(function() {
-	  var valor = $("#operacion1").val();
-                alert(valor);
-          });
-        </script>
-
 	</body>
 </html>
 

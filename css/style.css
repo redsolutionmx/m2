@@ -1713,7 +1713,7 @@ h1, h2, h3, h4, h5, h6, figure {
     padding-top: 5px;
     padding-left: 15px;
     margin-top: 5%;
-    color: white;
+    color: cornflowerblue;
 }
 
 
@@ -1756,3 +1756,11 @@ h1, h2, h3, h4, h5, h6, figure {
 .submit:hover{
     background-color: rgba(0, 131, 132, 0.99);
 }
+
+.blue {
+    color: cornflowerblue;
+}
+
+
+
+
