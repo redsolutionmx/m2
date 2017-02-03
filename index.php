@@ -1,4 +1,6 @@
-
+<?php 
+include 'Process/database.php';
+?>
 <!DOCTYPE html>
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
@@ -150,10 +152,24 @@
                 <br />
                 <div class="forms">
                     <label>Deseas</label><br />
+                    <select class="input" id="operacion1" name="operacion" required>
+                        <option value="">Seleccionar una opción</option>
+                        <?php echo $result_tipo['operacion']; ?>
+                        <option value="rentar">Rentar</option>
+                        <option value="comprar">Comprar</option>
+                    </select>
+                </div>
+                <div class="forms">
+                    <label>¿Buscas  <b><label id="operacion"></label></b> un(a)?</label><br />
                     <select class="input" name="operacion" required>
                         <option value="">Seleccionar una opción</option>
-                        <option value="Renta">Rentar</option>
-                        <option value="Comprar">Comprar</option>
+                        <option value="Casa">Casa</option>
+                        <option value="Departamento">Departamento</option>
+                        <option value="Bodega">Bodega</option>
+                        <option value="Almacen">Almacen</option>
+                        <option value="Terreno">Terreno</option>
+                        <option value="Edifico">Edificio</option>
+                        <option value="Local">Local Comercial</option>
                     </select>
                 </div>
                 <div class="forms">
@@ -162,7 +178,8 @@
                 </div>
                 <div class="forms">
                     <label>Num. de habitaciones</label><br />
-                    <select class="input text" name="lugar" >
+                    <select class="input text" name="habitaciones" >
+                        <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="2">3</option>
@@ -171,7 +188,8 @@
                 </div>
                 <div class="forms">
                     <label>Baños</label><br />
-                    <select class="input text" name="lugar" >
+                    <select class="input text" name="baños" >
+                        <option value="">0</option>
                         <option value="1/2">1/2</option>
                         <option value="1">1</option>
                         <option value="1 1/2">1 1/2</option>
@@ -186,14 +204,29 @@
                      <div class="radios"><input type="radio" name="gender" value="no"> no</div>
                 </div>
                 <div class="forms">
+                    <label>¿Cuantos Mtrs. cuadrados?</label>
+                    <br />
+                     <select class="input text" name="metros" >
+                        <option value="">Mostrar todos</option>
+                        <option value="1/2">Entre 80 y 120 MTRS. </option>
+                        <option value="1">Entre 120 y 160 MTRS.</option>
+                        <option value="1 1/2">Entre 160 y 200 MTRS.</option>
+                        <option value="2">Entre 200 y 250 MTRS.</option>
+                        <option value="3">Mayor a 250 MTRS.</option>
+                    </select>
+                </div>
+                <div class="forms">
                     <label>Precio Min/Max</label>
                     <br />
                      <div class="precios fontmin">
                          <i class="fa fa-usd" aria-hidden="true"></i>
-                         <input  style="width:100px;" type="number" name="min" value="" placeholder="$ Min" > </div><i class="fa fa-minus" aria-hidden="true"></i>
+                         <input style="width: 100px; background: transparent; border-radius: 53px; border-color: darkgoldenrod; border-style: solid; border-width: 2px;" type="number" name="min" value="" placeholder=" Min" min="500" > &nbsp;/ </div>
                      <div class="precios fontmin">
                          <i class="fa fa-usd" aria-hidden="true"></i>
-                         <input style="width:100px;" type="number" name="max" value="" placeholder="$ Max" ></div>
+                         <input style="width: 100px; background: transparent; border-radius: 53px; border-color: darkgoldenrod; border-style: solid; border-width: 2px;" type="number" type="number" name="max" value="" placeholder=" Max"></div>
+                </div>
+                <div class="forms">
+                    <input class="submit" type="submit" value="Buscar propiedades">
                 </div>
             </div>
         </form>
@@ -484,6 +517,13 @@
 
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
+        <!--efectos form-->
+        <script type="text/javascript">
+           $(document).ready(function() {
+	  var valor = $("#operacion1").val();
+                alert(valor);
+          });
+        </script>
 
 	</body>
 </html>
